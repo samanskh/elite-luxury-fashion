@@ -159,9 +159,9 @@ export const HomePage: React.FC = () => {
           <div className="flex justify-center items-center gap-2 sm:gap-4 text-center font-mono py-2">
             <div className="bg-stone-900/80 border border-stone-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl min-w-[55px] sm:min-w-[70px]">
               <span className="text-xl sm:text-3xl font-extrabold text-amber-400">
-                {toPersianDigits(timeLeft.hours < 10 ? `0${timeLeft.hours}` : timeLeft.hours)}
+                {toPersianDigits(timeLeft.seconds < 10 ? `0${timeLeft.seconds}` : timeLeft.seconds)}
               </span>
-              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">ساعت</span>
+              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">ثانیه</span>
             </div>
             <span className="text-lg sm:text-xl text-stone-600 font-bold">:</span>
             <div className="bg-stone-900/80 border border-stone-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl min-w-[55px] sm:min-w-[70px]">
@@ -173,9 +173,9 @@ export const HomePage: React.FC = () => {
             <span className="text-lg sm:text-xl text-stone-600 font-bold">:</span>
             <div className="bg-stone-900/80 border border-stone-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl min-w-[55px] sm:min-w-[70px]">
               <span className="text-xl sm:text-3xl font-extrabold text-amber-400">
-                {toPersianDigits(timeLeft.seconds < 10 ? `0${timeLeft.seconds}` : timeLeft.seconds)}
+                {toPersianDigits(timeLeft.hours < 10 ? `0${timeLeft.hours}` : timeLeft.hours)}
               </span>
-              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">ثانیه</span>
+              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">ساعت</span>
             </div>
           </div>
         </div>
