@@ -315,7 +315,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Floating AI Stylist Callout Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-6 rounded-2xl bg-gradient-to-r from-amber-500/10 via-stone-900/5 to-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-right">
             <div className="p-3 bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-xl">
@@ -337,7 +337,7 @@ export const HomePage: React.FC = () => {
             شروع گفتگو با مشاور
           </button>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );
