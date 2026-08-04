@@ -50,6 +50,8 @@ interface ShopContextType {
   user: UserProfile | null;
   loginUser: (phoneOrEmail: string) => void;
   logoutUser: () => void;
+  login: (userData?: { name?: string; phone?: string; email?: string } | string) => void;
+  logout: () => void;
 
   // Orders
   orders: Order[];
@@ -68,6 +70,7 @@ interface ShopContextType {
 const defaultUser: UserProfile = {
   id: 'usr-101',
   fullName: 'سارا محمدی',
+  name: 'سارا محمدی',
   phone: '۰۹۱۲۳۴۵۶۷۸۹',
   email: 'sara.mohammadi@elite.ir',
   avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop',
@@ -318,11 +321,34 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     navigateTo('profile');
   };
 
+  const login = (userData?: { name?: string; phone?: string; email?: string } | string) => {
+    if (typeof userData === 'string') {
+      loginUser(userData);
+    } else if (userData && typeof userData === 'object') {
+      const uName = userData.name || defaultUser.fullName;
+      setUser({
+        ...defaultUser,
+        fullName: uName,
+        name: uName,
+        email: userData.email || defaultUser.email,
+        phone: userData.phone || defaultUser.phone,
+      });
+      showToast('خوش آمدید! با موفقیت وارد حساب کاربری خود شدید.', 'success');
+      navigateTo('profile');
+    } else {
+      setUser(defaultUser);
+      showToast('خوش آمدید! با موفقیت وارد حساب کاربری خود شدید.', 'success');
+      navigateTo('profile');
+    }
+  };
+
   const logoutUser = () => {
     setUser(null);
     showToast('از حساب کاربری خارج شدید.', 'info');
     navigateTo('home');
   };
+
+  const logout = logoutUser;
 
   // Checkout Fake Order creation
   const createOrder = (paymentMethod: string = 'پرداخت آنلاین متصل به شتاب'): Order | null => {
@@ -393,6 +419,8 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         user,
         loginUser,
         logoutUser,
+        login,
+        logout,
 
         orders,
         createOrder,

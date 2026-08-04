@@ -47,6 +47,7 @@ export interface WishlistItem {
 export interface UserProfile {
   id: string;
   fullName: string;
+  name?: string;
   phone: string;
   email: string;
   avatar: string;

@@ -20,6 +20,9 @@ export const ProfilePage: React.FC = () => {
     );
   }
 
+  const userName = user.name || user.fullName || 'کاربر الیت';
+  const initial = userName ? userName.charAt(0) : 'ک';
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-in fade-in duration-300">
       
@@ -27,10 +30,10 @@ export const ProfilePage: React.FC = () => {
       <div className="bg-white dark:bg-stone-900 p-6 rounded-3xl border border-stone-200/80 dark:border-stone-800 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="w-16 h-16 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 font-extrabold text-2xl flex items-center justify-center border border-amber-500/30">
-            {user.name.charAt(0)}
+            {initial}
           </div>
           <div>
-            <h1 className="font-bold text-xl text-stone-900 dark:text-stone-100">{user.name}</h1>
+            <h1 className="font-bold text-xl text-stone-900 dark:text-stone-100">{userName}</h1>
             <p className="text-xs text-amber-600 dark:text-amber-400 font-semibold">عضو VIP باشگاه الیت</p>
           </div>
         </div>
