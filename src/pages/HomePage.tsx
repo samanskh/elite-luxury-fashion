@@ -146,36 +146,36 @@ export const HomePage: React.FC = () => {
 
       {/* 4. Countdown Drops Limited Edition Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-[#0f0f0f] text-white p-8 md:p-12 text-center space-y-6 relative overflow-hidden shadow-2xl border border-stone-800">
+        <div className="rounded-3xl bg-[#0f0f0f] text-white p-6 sm:p-8 md:p-12 text-center space-y-5 relative overflow-hidden shadow-2xl border border-stone-800">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
 
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-400 font-semibold">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-stone-400 font-semibold">
             LIMITED EDITION DROPS
           </p>
-          <h2 className="font-brand text-3xl sm:text-4xl font-extrabold text-white">
+          <h2 className="font-brand text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
             پایان مهلت ثبت‌نام دراپ جدید الیت
           </h2>
 
-          <div className="flex justify-center items-center gap-4 text-center font-mono py-2">
-            <div className="bg-stone-900/80 border border-stone-800 px-4 py-3 rounded-2xl min-w-[70px]">
-              <span className="text-2xl sm:text-3xl font-extrabold text-amber-400">
+          <div className="flex justify-center items-center gap-2 sm:gap-4 text-center font-mono py-2">
+            <div className="bg-stone-900/80 border border-stone-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl min-w-[55px] sm:min-w-[70px]">
+              <span className="text-xl sm:text-3xl font-extrabold text-amber-400">
                 {toPersianDigits(timeLeft.hours < 10 ? `0${timeLeft.hours}` : timeLeft.hours)}
               </span>
-              <span className="block text-[10px] text-stone-400 font-sans mt-1">ساعت</span>
+              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">ساعت</span>
             </div>
-            <span className="text-xl text-stone-600 font-bold">:</span>
-            <div className="bg-stone-900/80 border border-stone-800 px-4 py-3 rounded-2xl min-w-[70px]">
-              <span className="text-2xl sm:text-3xl font-extrabold text-amber-400">
+            <span className="text-lg sm:text-xl text-stone-600 font-bold">:</span>
+            <div className="bg-stone-900/80 border border-stone-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl min-w-[55px] sm:min-w-[70px]">
+              <span className="text-xl sm:text-3xl font-extrabold text-amber-400">
                 {toPersianDigits(timeLeft.minutes < 10 ? `0${timeLeft.minutes}` : timeLeft.minutes)}
               </span>
-              <span className="block text-[10px] text-stone-400 font-sans mt-1">دقیقه</span>
+              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">دقیقه</span>
             </div>
-            <span className="text-xl text-stone-600 font-bold">:</span>
-            <div className="bg-stone-900/80 border border-stone-800 px-4 py-3 rounded-2xl min-w-[70px]">
-              <span className="text-2xl sm:text-3xl font-extrabold text-amber-400">
+            <span className="text-lg sm:text-xl text-stone-600 font-bold">:</span>
+            <div className="bg-stone-900/80 border border-stone-800 px-3 sm:px-4 py-2 sm:py-3 rounded-2xl min-w-[55px] sm:min-w-[70px]">
+              <span className="text-xl sm:text-3xl font-extrabold text-amber-400">
                 {toPersianDigits(timeLeft.seconds < 10 ? `0${timeLeft.seconds}` : timeLeft.seconds)}
               </span>
-              <span className="block text-[10px] text-stone-400 font-sans mt-1">ثانیه</span>
+              <span className="block text-[10px] text-stone-400 font-sans mt-0.5">ثانیه</span>
             </div>
           </div>
         </div>

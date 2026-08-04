@@ -7,8 +7,6 @@ import { ToastContainer } from './components/Toast';
 import { CartDrawer } from './components/CartDrawer';
 import { QuickViewModal } from './components/QuickViewModal';
 import { SearchModal } from './components/SearchModal';
-import { VisualSearchModal } from './components/VisualSearchModal';
-import { AIFashionStylist } from './components/AIFashionStylist';
 import { CheckoutModal } from './components/CheckoutModal';
 
 // Pages
@@ -26,7 +24,7 @@ import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const AppContent: React.FC = () => {
-  const { currentPage, toastMessage, toastType, hideToast } = useShop();
+  const { currentPage } = useShop();
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const renderPage = () => {
@@ -59,13 +57,13 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#faf9f6] text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300 selection:bg-amber-200 dark:selection:bg-amber-900">
+    <div className="min-h-screen flex flex-col bg-[#faf9f6] text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300 selection:bg-amber-200 dark:selection:bg-amber-900 overflow-x-hidden max-w-full pb-16 md:pb-0">
       
       {/* Top Navbar */}
       <Navbar />
 
       {/* Main Content Area */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {renderPage()}
       </main>
 
@@ -79,8 +77,6 @@ const AppContent: React.FC = () => {
       <CartDrawer onOpenCheckout={() => setIsCheckoutOpen(true)} />
       <QuickViewModal />
       <SearchModal />
-      <VisualSearchModal />
-      <AIFashionStylist />
       <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />
 
       {/* Toast Notification */}
