@@ -1,0 +1,6 @@
+{
+  "name": "ELITE Luxury Fashion",
+  "description": "فروشگاه آنلاین برند لوکس پوشاک الیت - مجموعه استایل و مد فاخر ایرانی با تجربه خرید مدرن و هوشمند",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
